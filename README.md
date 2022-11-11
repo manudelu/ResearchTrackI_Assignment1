@@ -8,6 +8,12 @@ Project Description
 
 The aim of the project is to reach and grab all the silver tokens in order to move them next to the golden tokens and release them. When all the tokens are in pairs the robot stops.
 
+.
+.
+.
+.
+Work in Progress...
+
 
 Robot API
 ---------
