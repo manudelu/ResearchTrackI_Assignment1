@@ -1,4 +1,5 @@
-Python Robotics Simulator
+Python Robotics Simulator - Research Track I / Assignment 1 
+S4803977 - Delucchi Manuel
 ================================
 
 This is a simple, portable robot simulator developed by [Student Robotics](https://studentrobotics.org).
