@@ -1,6 +1,6 @@
 Research Track I - Assignment 1 
---------------------
-S4803977 - Delucchi Manuel
+================================
+Python Simulator Robot - Delucchi Manuel (S4803977)
 ================================
 
 This is a simple, portable robot simulator developed by [Student Robotics](https://studentrobotics.org).
