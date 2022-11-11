@@ -1,4 +1,5 @@
-Python Robotics Simulator - Research Track I / Assignment 1 
+Python Robotics Simulator
+Research Track I - Assignment 1 
 S4803977 - Delucchi Manuel
 ================================
 
