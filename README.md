@@ -18,9 +18,17 @@ Holonomic Robot:
 
 ![](robot-sim/sr/robot.png)
 
-Below is the first assignment arena:
+Silver Token:
 
-*** Insert image ***
+![](robot-sim/sr/token-silver.png)
+
+Golden Token:
+
+![](robot-sim/sr/token.png)
+
+Map:
+
+
 
 Installing and running
 ----------------------
