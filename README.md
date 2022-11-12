@@ -43,6 +43,23 @@ In order to run the project (main code written inside the file assignment1.py) t
 python2 run.py assignment.py
 ```
 
+Pseudo-Code
+----------------------
+
+```bash
+Initialize silver to true
+
+While true 
+
+    If silver is true
+    
+        Find distance, rotation and code of the silver token
+        
+    
+   
+    
+```
+
 ### Motors ###
 
 The simulated robot has two motors configured for skid steering, connected to a two-output [Motor Board](https://studentrobotics.org/docs/kit/motor_board). The left motor is connected to output `0` and the right motor to output `1`.
