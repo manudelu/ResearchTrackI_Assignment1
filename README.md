@@ -1,4 +1,4 @@
-Research Track I - Assignment 1 
+Research Track I - First Assignment 
 ================================
 Python Simulator Robot - Delucchi Manuel (S4803977)
 ===============================
@@ -6,19 +6,34 @@ Python Simulator Robot - Delucchi Manuel (S4803977)
 Project Description
 ----------------------
 
-The aim of the project is to reach and grab all the silver tokens in order to move them next to the golden tokens and release them. When all the tokens are in pairs the robot stops.
+The first assignment requires to write a Python script for achieving the robot's behaviour:
 
-.
-.
-.
-.
-Work in Progress...
+* Approach and grab the silver token;
+* Move the silver token next to the golden one; 
+* Release the silver token next to the golden one;
+* Iterate the process for every token in order to pair all of the silver tokens with the golden ones;
+* When all the tokens are paired the robot will complete his mission.
 
+Holonomic Robot:
 
-Robot API
----------
+![alt text](https://github.com/[manudelu]/[ResearchTrach_Assignment1]/[robot-sim]/[sr]/robot.png?raw=true)
 
-The API for controlling a simulated robot is designed to be as similar as possible to the [SR API][sr-api].
+Below is the first assignment arena:
+
+*** Insert image ***
+
+Installing and running
+----------------------
+
+The simulator requires a Python 2.7 installation, the [pygame](http://pygame.org/) library, [PyPyBox2D](https://pypi.python.org/pypi/pypybox2d/2.1-r331), and [PyYAML](https://pypi.python.org/pypi/PyYAML/).
+
+Pygame, unfortunately, can be tricky (though [not impossible](http://askubuntu.com/q/312767)) to install in virtual environments. If you are using `pip`, you might try `pip install hg+https://bitbucket.org/pygame/pygame`, or you could use your operating system's package manager. Windows users could use [Portable Python](http://portablepython.com/). PyPyBox2D and PyYAML are more forgiving, and should install just fine using `pip` or `easy_install`.
+
+In order to run the project (main code written inside the file assignment1.py) the command below should be written in the terminal:
+
+```bash
+python2 run.py assignment.py
+```
 
 ### Motors ###
 
