@@ -16,7 +16,7 @@ The first assignment requires to write a Python script for achieving the robot's
 
 Holonomic Robot:
 
-![alt text](https://github.com/[manudelu]/[ResearchTrach_Assignment1]/[robot-sim]/[sr]/robot.png?raw=true)
+![](https://github.com/[manudelu]/[ResearchTrach_Assignment1]/[robot-sim]/[sr]/robot.png)
 
 Below is the first assignment arena:
 
