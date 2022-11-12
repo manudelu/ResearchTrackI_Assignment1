@@ -20,7 +20,7 @@ Holonomic Robot:
 
 Silver Token:
 
-![](robot-sim/sr/token-silver.png)
+![](robot-sim/sr/token_silver.png)
 
 Golden Token:
 
