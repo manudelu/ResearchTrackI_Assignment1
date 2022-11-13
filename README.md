@@ -28,6 +28,7 @@ Golden Token:
 
 Map:
 
+![](robot-sim/sr/images/Arena.PNG)
 
 
 Installing and running
