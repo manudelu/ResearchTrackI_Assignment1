@@ -48,17 +48,90 @@ Pseudo-Code
 ----------------------
 
 ```bash
-Initialize silver to true
+Initialize silver to a true value
 
-While true 
+While 1:
 
-    If silver is true
+    If silver is true:
     
-        Find distance, rotation and code of the silver token
+        Then find distance, rotation and code of the closest silver token that has not already been paired
         
+        If no silver token is detected:
+        
+            Print "I don't see any token!!"
+            
+            Then make the robot turn slowly until we find one
+            
+        Else if the robot is not well aligned with the token:
+        
+            Print "Left a bit..." or Print "Right a bit..."
+            
+            Then make the robot rotate to the left or to the right
+            
+        Else if we are close to the token:
+        
+             Print "Found it!!"
+        
+             Then we make the robot grab the silver token
+             
+             If we happen to grab it:
+             
+                 Print "Gotcha!!"
+                 
+                 Update the list that stores the silver tokens already paired
+                 
+                 Set silver to false
+                 
+         Else if the robot is well aligned with the token:
+         
+             Print "Forward!!" 
+             
+             Then make the robot drive forward    
     
-   
+    Else:
     
+         Then find distance, rotation and code of the golden token
+         
+                 If no golden token is detected:
+        
+            Print "I don't see any token!!"
+            
+            Then make the robot turn slowly until we find one
+            
+        Else if the robot is not well aligned with the token:
+        
+            Print "Left a bit..." or Print "Right a bit..."
+            
+            Then make the robot rotate to the left or to the right
+            
+        Else if we are close to the token:
+        
+             Print "Found it!!"
+        
+             Then we make the robot release the silver token
+             
+             If we release it:
+             
+                 Print "Paired!!"
+                 
+                 Update the list that stores the golden tokens already paired
+                 
+                 Set silver to true
+                 
+                 Then make the robot drive slightly backward
+                 
+         Else if the robot is well aligned with the token:
+         
+             Print "Forward!!" 
+             
+             Then make the robot drive forward  
+             
+     If the list of the paired golden token is full:
+     
+         Print "Mission Complete!!"
+     
+         Then end the program
+        
 ```
 
 ### Motors ###
