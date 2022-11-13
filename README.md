@@ -134,6 +134,9 @@ While 1:
         
 ```
 
+Features
+================================
+
 ### Motors ###
 
 The simulated robot has two motors configured for skid steering, connected to a two-output [Motor Board](https://studentrobotics.org/docs/kit/motor_board). The left motor is connected to output `0` and the right motor to output `1`.
@@ -144,6 +147,18 @@ The Motor Board API is identical to [that of the SR API](https://studentrobotics
 R.motors[0].m0.power = 25
 R.motors[0].m1.power = -25
 ```
+
+Two main functions have been designed to drive straight and to rotate the robot on its axis:
+
+* ```drive(speed, seconds)```: Function for setting a linear velocity. It allows the robot to move into a straight line for a certain time and with a defined speed.
+* ```turn(speed, seconds)```: Function for setting an angular velocity. It allows the robot to turn on its axis.
+
+Each function has no ```Returns```.
+
+Also each function hs two ```Arguments```:
+
+* ```speed (int)```: Speed of the motors.
+* ```seconds (int)```: Time interval.
 
 ### The Grabber ###
 
@@ -158,6 +173,8 @@ The `R.grab` function returns `True` if a token was successfully picked up, or `
 To drop the token, call the `R.release` method.
 
 Cable-tie flails are not implemented.
+
+Two functions have been designed to clean the main function: ```MovetoSilver()``` & ```MovetoGolden```. The role of these functions has been described in the pseudo-code section right above.
 
 ### Vision ###
 
@@ -190,5 +207,31 @@ for m in markers:
     elif m.info.marker_type == MARKER_ARENA:
         print " - Arena marker {0} is {1} metres away".format( m.info.offset, m.dist )
 ```
+
+Two main functions are designed to recognize the Marker object closest to the robot and whether is gold or silver:
+
+* ```find_silver_token(list_silver_token)```: This function detects the closest silver box to the robot that has not already been paired.
+
+  ```Argument```: 
+
+  * ```list_silver_token``` : List of codes (silver tokens) that have already been paired.
+  
+  ```Returns```: 
+
+  * ```dist (float)```: Distance of the closest silver token, ```-1``` if no silver token is detected.
+  * ```rot_y (float)```: Angle between the robot and the silver token, ```-1``` if no silver token is detected.
+  * ```code (int)```: Numeric code of the token.
+
+* ```find_golden_token(list_golden_token)```: This function detects the closest golden box to the robot that has not already been paired.
+
+  ```Argument```: 
+
+  * ```list_golden_token``` : List of codes (golden tokens) that have already been paired.
+
+  ```Returns```: 
+
+  * ```dist (float)```: Distance of the closest silver token, ```-1``` if no silver token is detected.
+  * ```rot_y (float)```: Angle between the robot and the silver token, ```-1``` if no silver token is detected.
+  * ```code (int)```: Numeric code of the token.
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
