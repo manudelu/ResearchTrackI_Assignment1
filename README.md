@@ -133,6 +133,10 @@ While 1:
          Then end the program
         
 ```
+Video
+================================
+
+![](robot-sim/images/Video.mp4)
 
 Features
 ================================
