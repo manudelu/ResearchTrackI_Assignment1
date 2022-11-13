@@ -47,7 +47,7 @@ python2 run.py assignment.py
 Pseudo-Code
 ----------------------
 
-```bash
+```
 Initialize silver to a true value
 
 While 1:
