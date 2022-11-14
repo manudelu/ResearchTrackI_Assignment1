@@ -136,8 +136,6 @@ While 1:
 Video
 ================================
 
-![Watch the video:](robot-sim/images/Video.mp4)
-
 https://user-images.githubusercontent.com/97695681/201551968-4a472d7b-c090-42b3-adb4-9206dc35b263.mp4
 
 Features
@@ -241,3 +239,8 @@ Two main functions are designed to recognize the Marker object closest to the ro
   * ```code (int)```: Numeric code of the token.
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
+
+Possible Improvements
+================================
+* Obstacle avoidance can be implemented.
+* It could be useful to make the robot choose the closest golden token to pair with the silver one, maybe by turning completely on its axis, detecting the distance between the robot and each golden token and choosing the closest one.
