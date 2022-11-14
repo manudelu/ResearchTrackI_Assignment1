@@ -134,12 +134,12 @@ While 1:
         
 ```
 Video
-================================
+----------------------
 
 https://user-images.githubusercontent.com/97695681/201551968-4a472d7b-c090-42b3-adb4-9206dc35b263.mp4
 
 Features
-================================
+----------------------
 
 ### Motors ###
 
@@ -241,6 +241,7 @@ Two main functions are designed to recognize the Marker object closest to the ro
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
 Possible Improvements
-================================
+----------------------
+
 * Obstacle avoidance can be implemented.
 * It could be useful to make the robot choose the closest golden token to pair with the silver one, maybe by turning completely on its axis, detecting the distance between the robot and each golden token and choosing the closest one.
