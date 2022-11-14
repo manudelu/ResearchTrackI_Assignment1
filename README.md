@@ -136,7 +136,7 @@ While 1:
 Video
 ================================
 
-![](robot-sim/images/Video.mp4)
+![Watch the video:](robot-sim/images/Video.mp4)
 
 Features
 ================================
