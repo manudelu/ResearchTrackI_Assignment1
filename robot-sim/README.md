@@ -16,19 +16,19 @@ The first assignment requires to write a Python script for achieving the robot's
 
 Holonomic Robot:
 
-![](robot-sim/sr/robot.png)
+![](sr/robot.png)
 
 Silver Token:
 
-![](robot-sim/sr/token_silver.png)
+![](sr/token_silver.png)
 
 Golden Token:
 
-![](robot-sim/sr/token.png)
+![](sr/token.png)
 
 Map:
 
-![](robot-sim/images/Arena.PNG)
+![](images/Arena.PNG)
 
 
 Installing and running
