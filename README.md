@@ -249,4 +249,6 @@ Possible Improvements
 ----------------------
 
 * Obstacle avoidance can be implemented.
-* It could be useful to make the robot choose the closest golden token to pair with the silver one, maybe by turning completely on its axis, detecting the distance between the robot and each golden token and choosing the closest one.
+* It could be useful to make the robot choose the closest golden token to pair with the silver one instead of choosing the first golden token in the robot's field of view. This could be probably done by making the robot turn completely on its axis in order to detect all the golden tokens and finally decide what's the closest one.
+* Minimize the robot's research time, increasing the robot's efficiency and making it faster.
+
