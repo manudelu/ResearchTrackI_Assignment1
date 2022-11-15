@@ -1,8 +1,35 @@
-Python Robotics Simulator
+Research Track I - First Assignment 
 ================================
+Python Simulator Robot - Delucchi Manuel (S4803977)
+===============================
 
-This is a simple, portable robot simulator developed by [Student Robotics](https://studentrobotics.org).
-Some of the arenas and the exercises have been modified for the Research Track I course
+Project Description
+----------------------
+
+The first assignment requires to write a Python script for achieving the robot's behaviour:
+
+* Approach and grab the silver token;
+* Move the silver token next to the golden one; 
+* Release the silver token next to the golden one;
+* Iterate the process for every token in order to pair all of the silver tokens with the golden ones;
+* When all the tokens are paired the robot will complete his mission.
+
+Holonomic Robot:
+
+![](robot-sim/sr/robot.png)
+
+Silver Token:
+
+![](robot-sim/sr/token_silver.png)
+
+Golden Token:
+
+![](robot-sim/sr/token.png)
+
+Map:
+
+![](robot-sim/images/Arena.PNG)
+
 
 Installing and running
 ----------------------
@@ -11,39 +38,113 @@ The simulator requires a Python 2.7 installation, the [pygame](http://pygame.org
 
 Pygame, unfortunately, can be tricky (though [not impossible](http://askubuntu.com/q/312767)) to install in virtual environments. If you are using `pip`, you might try `pip install hg+https://bitbucket.org/pygame/pygame`, or you could use your operating system's package manager. Windows users could use [Portable Python](http://portablepython.com/). PyPyBox2D and PyYAML are more forgiving, and should install just fine using `pip` or `easy_install`.
 
-## Troubleshooting
-
-When running `python run.py <file>`, you may be presented with an error: `ImportError: No module named 'robot'`. This may be due to a conflict between sr.tools and sr.robot. To resolve, symlink simulator/sr/robot to the location of sr.tools.
-
-On Ubuntu, this can be accomplished by:
-* Find the location of srtools: `pip show sr.tools`
-* Get the location. In my case this was `/usr/local/lib/python2.7/dist-packages`
-* Create symlink: `ln -s path/to/simulator/sr/robot /usr/local/lib/python2.7/dist-packages/sr/`
-
-## Exercise
------------------------------
-
-To run one or more scripts in the simulator, use `run.py`, passing it the file names. 
-
-I am proposing you three exercises, with an increasing level of difficulty.
-The instruction for the three exercises can be found inside the .py files (exercise1.py, exercise2.py, exercise3.py).
-
-When done, you can run the program with:
+In order to run the project (main code written inside the file assignment1.py) the command below should be written in the terminal:
 
 ```bash
-$ python run.py exercise1.py
+python2 run.py assignment1.py
 ```
 
-You have also the solutions of the exercises (folder solutions)
+Pseudo-Code
+----------------------
 
-```bash
-$ python run.py solutions/exercise1_solution.py
 ```
+Initialize silver to a true value
+
+While 1:
+
+    If silver is true:
+    
+        Then find distance, rotation and code of the closest silver token that has not already been paired
+        
+        If no silver token is detected:
+        
+            Print "I don't see any token!!"
+            
+            Then make the robot turn slowly until we find one
+            
+        Else if the robot is not well aligned with the token:
+        
+            Print "Left a bit..." or Print "Right a bit..."
+            
+            Then make the robot rotate to the left or to the right
+            
+        Else if we are close to the token:
+        
+             Print "Found it!!"
+        
+             Then we make the robot grab the silver token
+             
+             If we happen to grab it:
+             
+                 Print "Gotcha!!"
+                 
+                 Update the list that stores the silver tokens already paired
+                 
+                 Set silver to false
+                 
+         Else if the robot is well aligned with the token:
+         
+             Print "Forward!!" 
+             
+             Then make the robot drive forward    
+    
+    Else:
+    
+         Then find distance, rotation and code of the golden token
+         
+                 If no golden token is detected:
+        
+            Print "I don't see any token!!"
+            
+            Then make the robot turn slowly until we find one
+            
+        Else if the robot is not well aligned with the token:
+        
+            Print "Left a bit..." or Print "Right a bit..."
+            
+            Then make the robot rotate to the left or to the right
+            
+        Else if we are close to the token:
+        
+             Print "Found it!!"
+        
+             Then we make the robot release the silver token
+             
+             If we release it:
+             
+                 Print "Paired!!"
+                 
+                 Update the list that stores the golden tokens already paired
+                 
+                 Set silver to true
+                 
+                 Then make the robot drive slightly backward
+                 
+         Else if the robot is well aligned with the token:
+         
+             Print "Forward!!" 
+             
+             Then make the robot drive forward  
+             
+     If the list of the paired golden token is full:
+     
+         Print "Mission Complete!!"
+     
+         Then end the program
+        
+```
+Video
+----------------------
+
+https://user-images.githubusercontent.com/97695681/201551968-4a472d7b-c090-42b3-adb4-9206dc35b263.mp4
 
 Robot API
----------
+----------------------
 
 The API for controlling a simulated robot is designed to be as similar as possible to the [SR API][sr-api].
+
+Features
+----------------------
 
 ### Motors ###
 
@@ -55,6 +156,18 @@ The Motor Board API is identical to [that of the SR API](https://studentrobotics
 R.motors[0].m0.power = 25
 R.motors[0].m1.power = -25
 ```
+
+Two main functions have been designed to drive straight and to rotate the robot on its axis:
+
+* ```drive(speed, seconds)```: Function for setting a linear velocity. It allows the robot to move into a straight line for a certain time and with a defined speed.
+* ```turn(speed, seconds)```: Function for setting an angular velocity. It allows the robot to turn on its axis.
+
+Each function has no ```Returns```.
+
+Also each function hs two ```Arguments```:
+
+* ```speed (int)```: Speed of the motors.
+* ```seconds (int)```: Time interval.
 
 ### The Grabber ###
 
@@ -69,6 +182,8 @@ The `R.grab` function returns `True` if a token was successfully picked up, or `
 To drop the token, call the `R.release` method.
 
 Cable-tie flails are not implemented.
+
+Two functions have been designed to clean the main function: ```MovetoSilver()``` & ```MovetoGolden```. The role of these functions has been described in the pseudo-code section right above.
 
 ### Vision ###
 
@@ -102,4 +217,36 @@ for m in markers:
         print " - Arena marker {0} is {1} metres away".format( m.info.offset, m.dist )
 ```
 
+Two main functions are designed to recognize the Marker object closest to the robot and whether is gold or silver:
+
+* ```find_silver_token(list_silver_token)```: This function detects the closest silver box to the robot that has not already been paired.
+
+  ```Argument```: 
+
+  * ```list_silver_token``` : List of codes (silver tokens) that have already been paired.
+  
+  ```Returns```: 
+
+  * ```dist (float)```: Distance of the closest silver token, ```-1``` if no silver token is detected.
+  * ```rot_y (float)```: Angle between the robot and the silver token, ```-1``` if no silver token is detected.
+  * ```code (int)```: Numeric code of the token.
+
+* ```find_golden_token(list_golden_token)```: This function detects the closest golden box to the robot that has not already been paired.
+
+  ```Argument```: 
+
+  * ```list_golden_token``` : List of codes (golden tokens) that have already been paired.
+
+  ```Returns```: 
+
+  * ```dist (float)```: Distance of the closest silver token, ```-1``` if no silver token is detected.
+  * ```rot_y (float)```: Angle between the robot and the silver token, ```-1``` if no silver token is detected.
+  * ```code (int)```: Numeric code of the token.
+
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
+
+Possible Improvements
+----------------------
+
+* Obstacle avoidance can be implemented.
+* It could be useful to make the robot choose the closest golden token to pair with the silver one, maybe by turning completely on its axis, detecting the distance between the robot and each golden token and choosing the closest one.
