@@ -41,7 +41,7 @@ Pygame, unfortunately, can be tricky (though [not impossible](http://askubuntu.c
 In order to run the project (main code written inside the file assignment1.py) the command below should be written in the terminal:
 
 ```bash
-python2 run.py assignment.py
+python2 run.py assignment1.py
 ```
 
 Pseudo-Code
@@ -137,6 +137,11 @@ Video
 ----------------------
 
 https://user-images.githubusercontent.com/97695681/201551968-4a472d7b-c090-42b3-adb4-9206dc35b263.mp4
+
+Robot API
+----------------------
+
+The API for controlling a simulated robot is designed to be as similar as possible to the [SR API][sr-api].
 
 Features
 ----------------------
