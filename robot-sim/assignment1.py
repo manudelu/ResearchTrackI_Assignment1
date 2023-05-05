@@ -5,6 +5,8 @@ from __future__ import print_function
 import time
 from sr.robot import *
 
+start = time.time()
+
 a_th = 2.0
 """ float: Threshold for the control of the orientation"""
 
@@ -179,8 +181,13 @@ def Mission_Complete():
     """
     Function that ends the program (exit the while loop) when all the golden tokens are paired
     """
+    end = time.time()
+    
     if len(list_golden_token) == 6: # If we have already paired the six golden tokens, exit the program
 	 print("Mission Complete!")
+	 
+	 elapsed_time = end - start
+	 print("Time: ", elapsed_time)
 	 exit()
 
 
@@ -194,6 +201,7 @@ def Mission_Complete():
 # Then, the robot will follow this process until all of the tokens are paired
 
 while 1:
+
   
    if silver:  # If silver = True: we look for a silver token that is not already been paired
       
